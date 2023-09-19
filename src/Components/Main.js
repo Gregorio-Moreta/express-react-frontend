@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Index from '../Pages/Index';
@@ -40,7 +39,7 @@ function Main(props) {
 // Inside of Main.js
 
 const updatePeople = async (person, id) => {
-    await fetch(URL + id, {
+    await fetch(URL + '/' + person._id, {
       method: 'PUT',
       headers: {
         'Content-Type': 'Application/json',
@@ -55,7 +54,7 @@ const updatePeople = async (person, id) => {
 
 
 const deletePeople = async (id) => {
-    await fetch(URL + id, {
+    await fetch(URL + '/' + id, {
       method: 'DELETE',
     });
     getPeople();
